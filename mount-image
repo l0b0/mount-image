@@ -1,21 +1,21 @@
 #!/bin/sh
 #
 # NAME
-#    mountiso.sh - Mount ISO files in Nautilus or the shell
+#    mount-image - Mount ISO files in Nautilus or the shell
 #
 # SYNOPSIS
-#    mountiso.sh [filenames]
+#    mount-image [filenames]
 #
 # DESCRIPTION
 #    Copy script to ~/.gnome2/nautilus-scripts/ and either:
-#    - right-click one / several ISO files and select Scripts -> mountiso.sh
+#    - right-click one / several ISO files and select Scripts -> mount-image
 #    - run it in a shell as described above
 #
 #    In addition to mounting the ISO files, it will create a symlink from
 #    /path/to/iso (without file extension) to the mount point, for easy access.
 #
 # COPYRIGHT AND LICENSE
-#    Copyright (C) 2008-2010 Victor Engmark
+#    Copyright (C) 2008-2011 Victor Engmark
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by
