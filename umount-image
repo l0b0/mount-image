@@ -1,0 +1,109 @@
+#!/bin/sh
+#
+# NAME
+#    unmountiso.sh - Unmount ISO files in Nautilus or the shell
+#
+# SYNOPSIS
+#    unmountiso.sh [filenames]
+#
+# DESCRIPTION
+#    Copy script to ~/.gnome2/nautilus-scripts/ and either:
+#    - right-click one / several ISO files and select Scripts -> unmountiso.sh
+#    - run it in a shell as described above
+#
+#    See mountiso.sh for more information.
+#
+# COPYRIGHT AND LICENSE
+#    Copyright (C) 2008-2010 Victor Engmark
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+################################################################################
+
+ifs_original="$IFS" # Reset when done
+IFS='
+' # Make sure paths with spaces don't make any trouble when looping
+
+PATH='/usr/bin:/bin'
+cmdname=$(basename $0)
+description='ISO Mounter'
+
+mount_dir='/media'
+
+# Exit codes from /usr/include/sysexits.h, as recommended by
+# http://www.faqs.org/docs/abs/HTML/exitcodes.html
+EX_OK=0           # successful termination
+EX_OSERR=71       # system error (e.g., can't fork)
+
+# Custom errors
+EX_UNKNOWN=1
+
+error()
+{
+    if [ -z "$2" ]
+    then
+        error_code=$EX_UNKNOWN
+    else
+        error_code=$2
+    fi
+    zenity --error --title "$description" --text "$1"
+    exit $error_code
+}
+
+warning()
+{
+    zenity --warning --title "$description" --text "$1"
+}
+
+for iso_path in $*
+do
+    # Check the file type before continuing
+    if [ -z "$(file -b $iso_path | grep 'ISO 9660\|UDF filesystem')" ]
+    then
+        warning "'${iso_path}' appears not to be an ISO file. Skipping."
+        continue
+    fi
+
+    iso_filename=$(basename $iso_path)
+ 
+    # Remove shortcut
+    link_path=$(dirname $iso_path)/${iso_filename%.*}
+    if [ -L $link_path ]
+    then
+        gksudo --description $description -- rm $link_path || \
+            warning "Couldn't remove symbolic link '${link_path}'."
+    fi
+
+    # Abort if the file is already unmounted
+    iso_mount_path=$mount_dir/${iso_filename}
+    if [ ! -d $iso_mount_path ]
+    then
+        warning "'${iso_path}' is not mounted."
+        continue
+    fi
+
+    # Unmount file
+    gksudo --description $description -- umount $iso_mount_path || \
+        error "Couldn't unmount '${iso_mount_path}'." $EX_OSERR
+
+    # Remove mount directory
+    if [ -d $iso_mount_path ]
+    then
+        gksudo --description $description -- rmdir $iso_mount_path || \
+            warning "Couldn't remove mount directory '${iso_mount_path}'."
+    fi
+done
+
+# Cleanup
+IFS=$ifs_original
