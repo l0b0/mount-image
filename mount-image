@@ -1,34 +1,38 @@
 #!/bin/sh
 #
 # NAME
-#    mount-image - Mount ISO files in Nautilus or the shell
+#        mount-image - Mount image files
 #
 # SYNOPSIS
-#    mount-image [filenames]
+#        mount-image PATH...
 #
 # DESCRIPTION
-#    Copy script to ~/.gnome2/nautilus-scripts/ and either:
-#    - right-click one / several ISO files and select Scripts -> mount-image
-#    - run it in a shell as described above
+#        A PATH consists of a DIRNAME and a BASENAME, where BASENAME can be
+#        split into FILENAME and EXTENSION. Given these, the script will
+#        attempt to mount PATH as /media/BASENAME, and create a symlink
+#        DIRNAME/FILENAME. In other words, there will be a symlink with the
+#        same path as the image file, except for the EXTENSION.
 #
-#    In addition to mounting the ISO files, it will create a symlink from
-#    /path/to/iso (without file extension) to the mount point, for easy access.
+#        umount-image undoes these actions, in the opposite sequence.
+#
+#        If either script fails, it is likely that the image or mount point is
+#        still in use, or that the image file has no extension.
 #
 # COPYRIGHT AND LICENSE
-#    Copyright (C) 2008-2011 Victor Engmark
+#        Copyright (C) 2008-2011 Victor Engmark
 #
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU General Public License as published by
-#    the Free Software Foundation, either version 3 of the License, or
-#    (at your option) any later version.
+#        This program is free software: you can redistribute it and/or modify
+#        it under the terms of the GNU General Public License as published by
+#        the Free Software Foundation, either version 3 of the License, or
+#        (at your option) any later version.
 #
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU General Public License for more details.
+#        This program is distributed in the hope that it will be useful,
+#        but WITHOUT ANY WARRANTY; without even the implied warranty of
+#        MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#        GNU General Public License for more details.
 #
-#    You should have received a copy of the GNU General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#        You should have received a copy of the GNU General Public License
+#        along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ################################################################################
 
