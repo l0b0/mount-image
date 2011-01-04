@@ -10,7 +10,8 @@ Simply copy the following lines into a terminal window and press Enter. This ins
 ### code start ###
 wget --quiet --no-check-certificate --directory-prefix=$HOME/.gnome2/nautilus-scripts/ \
 https://github.com/l0b0/mount-image/raw/master/mount-image \
-https://github.com/l0b0/mount-image/raw/master/umount-image && \
+https://github.com/l0b0/mount-image/raw/master/umount-image \
+https://github.com/l0b0/mount-image/raw/master/common.sh && \
 chmod u+x $HOME/.gnome2/nautilus-scripts/{,u}mount-image && \
 sudo ln -s $HOME/.gnome2/nautilus-scripts/{,u}mount-image /usr/local/bin
 ### code end ###
