@@ -18,3 +18,6 @@ Run:
 
 mount-image /path/to/some.iso
 umount-image /path/to/some.iso
+
+In Nautilus (the GNOME file manager):
+Right-click an image file, select "Scripts", and then "mount-image" or "unmount-image".
