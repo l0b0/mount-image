@@ -1,0 +1,20 @@
+mount-iso - Easy mounting of ISO files, for Nautilus and the shell
+
+
+Install:
+
+Simply copy the following lines into a terminal window and press Enter. This installs the scripts for the current user.
+
+### START ###
+wget --quiet --no-check-certificate --directory-prefix=$HOME/.gnome2/nautilus-scripts/ \
+https://github.com/l0b0/mount-image/raw/master/mount-image \
+https://github.com/l0b0/mount-image/raw/master/umount-image && \
+chmod u+x $HOME/.gnome2/nautilus-scripts/{,u}mount-image && \
+sudo ln -s $HOME/.gnome2/nautilus-scripts/{,u}mount-image /usr/bin
+### END ###
+
+
+Run:
+
+mount-image /path/to/some.iso
+umount-image /path/to/some.iso
