@@ -1,6 +1,6 @@
 mount-iso - Easy mounting of ISO (and similar) files, from Nautilus or the shell
 
-This has been tested with NRG and ISO files.
+This has been tested with ISO and NRG files.
 
 
 INSTALL
@@ -19,8 +19,12 @@ sudo ln -s $HOME/.gnome2/nautilus-scripts/{,u}mount-image /usr/local/bin
 
 RUN
 
-mount-image /path/to/some.iso
-umount-image /path/to/some.iso
+$ mount-image /path/to/some.iso
+$ umount-image /path/to/some.iso
 
 In Nautilus (the GNOME file manager):
 Right-click an image file, select "Scripts", and then "mount-image" or "unmount-image".
+
+Both methods take multiple files - You can
+$ mount-image *.iso
+and use the script on selected files in Nautilus.
