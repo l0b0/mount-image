@@ -5,7 +5,7 @@ This has been tested with ISO and NRG files.
 
 INSTALL
 
-git clone https://github.com/l0b0/mount-image.git && sudo mount-image/install.sh
+git clone https://github.com/l0b0/mount-image.git && mount-image/install.sh
 
 Now you can remove the mount-image directory.
 
