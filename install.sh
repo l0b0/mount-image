@@ -18,7 +18,7 @@ sudo cp -- "${dir}/common.sh" "${dir}/mount-image" "${dir}/umount-image" /usr/lo
 sudo chmod a+x -- /usr/local/bin/mount-image /usr/local/bin/umount-image || fail
 
 # Import the Nautilus settings (run for each user)
-gconftool-2 --load nautilus-actions.xml || fail
+gconftool-2 --load "${dir}/nautilus-actions.xml" || fail
 
 # Success
 echo 'Installation succeeded. Please see the README file for usage instructions.'
