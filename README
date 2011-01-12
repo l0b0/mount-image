@@ -1,6 +1,4 @@
-mount-iso - Easy mounting of ISO (and similar) files, from Nautilus or the shell
-
-This has been tested with ISO and NRG files.
+mount-image - Easy mounting of ISO (and similar) files, from Nautilus or the shell
 
 
 INSTALL
@@ -13,7 +11,7 @@ Now you can remove the mount-image directory.
 RUN
 
 In Nautilus (the GNOME file manager):
-Right-click an image file, select "Scripts", and then "mount-image" or "unmount-image".
+Right-click on an image file, then select "Mount Image File(s)" or "Unmount Image File(s)".
 
 On the shell:
 $ mount-image /path/to/some.iso
@@ -21,4 +19,4 @@ $ umount-image /path/to/some.iso
 
 Both methods take multiple files - You can
 $ mount-image *.{iso,nrg}
-and use the script on selected files in Nautilus.
+or use the script on several selected files in Nautilus.
