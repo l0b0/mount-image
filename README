@@ -5,26 +5,20 @@ This has been tested with ISO and NRG files.
 
 INSTALL
 
-Simply copy the following lines into a terminal window and press Enter. This installs the scripts for the current user.
+git clone https://github.com/l0b0/mount-image.git && sudo mount-image/install.sh
 
-### code start ###
-wget --quiet --no-check-certificate --directory-prefix=$HOME/.gnome2/nautilus-scripts/ \
-https://github.com/l0b0/mount-image/raw/master/mount-image \
-https://github.com/l0b0/mount-image/raw/master/umount-image \
-https://github.com/l0b0/mount-image/raw/master/common.sh && \
-chmod u+x $HOME/.gnome2/nautilus-scripts/{,u}mount-image && \
-sudo ln -s $HOME/.gnome2/nautilus-scripts/{,u}mount-image /usr/local/bin
-### code end ###
+Now you can remove the mount-image directory.
 
 
 RUN
 
-$ mount-image /path/to/some.iso
-$ umount-image /path/to/some.iso
-
 In Nautilus (the GNOME file manager):
 Right-click an image file, select "Scripts", and then "mount-image" or "unmount-image".
 
+On the shell:
+$ mount-image /path/to/some.iso
+$ umount-image /path/to/some.iso
+
 Both methods take multiple files - You can
-$ mount-image *.iso
+$ mount-image *.{iso,nrg}
 and use the script on selected files in Nautilus.
