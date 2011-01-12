@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gconfentryfile>
+  <entrylist base="/apps/nautilus-actions/configurations/12201432-a20c-445b-a1b0-2ef6bb356a4f">
+    <entry>
+      <key>type</key>
+      <value>
+        <string>Action</string>
+      </value>
+    </entry>
+    <entry>
+      <key>items</key>
+      <value>
+        <list type="string">
+          <value>
+            <string>profile-zero</string>
+          </value>
+        </list>
+      </value>
+    </entry>
+    <entry>
+      <key>label</key>
+      <value>
+        <string>Mount Image File(s)</string>
+      </value>
+    </entry>
+    <entry>
+      <key>tooltip</key>
+      <value>
+        <string>Mount file and create link to mount point</string>
+      </value>
+    </entry>
+    <entry>
+      <key>icon</key>
+      <value>
+        <string>gtk-cdrom</string>
+      </value>
+    </entry>
+    <entry>
+      <key>toolbar-label</key>
+      <value>
+        <string>Mount Image File(s)</string>
+      </value>
+    </entry>
+    <entry>
+      <key>profile-zero/desc-name</key>
+      <value>
+        <string>mount-image</string>
+      </value>
+    </entry>
+    <entry>
+      <key>profile-zero/path</key>
+      <value>
+        <string>/usr/local/bin/mount-image</string>
+      </value>
+    </entry>
+    <entry>
+      <key>profile-zero/parameters</key>
+      <value>
+        <string>%M</string>
+      </value>
+    </entry>
+    <entry>
+      <key>profile-zero/accept-multiple-files</key>
+      <value>
+        <bool>true</bool>
+      </value>
+    </entry>
+    <entry>
+      <key>profile-zero/mimetypes</key>
+      <value>
+        <list type="string">
+          <value>
+            <string>application/x-cd-image</string>
+            <string>application/x-iso9660-image</string>
+          </value>
+        </list>
+      </value>
+    </entry>
+  </entrylist>
+</gconfentryfile>
