@@ -11,6 +11,9 @@ fail()
 full_path="$(readlink -fn -- "$0")" || fail
 dir="$(dirname -- "$full_path")" || fail
 
+# Install Nautilus Actions
+sudo apt-get install nautilus-actions || fail
+
 # Move files in place
 sudo cp -- "${dir}/common.sh" "${dir}/mount-image" "${dir}/umount-image" /usr/local/bin || fail
 
