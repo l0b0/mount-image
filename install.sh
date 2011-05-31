@@ -1,9 +1,9 @@
 #!/bin/sh
 fail()
 {
-    echo 'Installation failed! Please submit a bug report at'
-    echo 'https://github.com/l0b0/mount-image/issues'
-    echo 'with a copy of the output.'
+    echo 'Installation failed! Please submit a bug report at' >&2
+    echo 'https://github.com/l0b0/mount-image/issues' >&2
+    echo 'with a copy of the output.' >&2
     exit 1
 }
 
