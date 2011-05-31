@@ -24,4 +24,4 @@ sudo chmod a+x -- /usr/local/bin/mount-image /usr/local/bin/umount-image || fail
 gconftool-2 --load "${dir}/nautilus-actions.xml" || fail
 
 # Success
-echo 'Installation succeeded. Please see the README file for usage instructions.'
+echo "Installation succeeded. You'll need to restart Nautilus or log in again to use mount-image. Please see the README file for usage instructions."
