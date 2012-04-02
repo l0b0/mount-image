@@ -1,13 +1,13 @@
 #!/bin/sh
 #
 # NAME
-#        umount-image - Unmount image files
+#        umount-image.sh - Unmount image files
 #
 # SYNOPSIS
-#        umount-image PATH...
+#        ./umount-image.sh PATH...
 #
 # DESCRIPTION
-#        See mount-image for documentation.
+#        See mount-image.sh for documentation.
 #
 # COPYRIGHT AND LICENSE
 #        Copyright (C) 2008-2011 Victor Engmark

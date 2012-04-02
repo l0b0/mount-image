@@ -1,10 +1,10 @@
 #!/bin/sh
 #
 # NAME
-#        mount-image - Mount image files
+#        mount-image.sh - Mount image files
 #
 # SYNOPSIS
-#        mount-image PATH...
+#        ./mount-image.sh PATH...
 #
 # DESCRIPTION
 #        A PATH consists of a DIRNAME and a BASENAME, where BASENAME can be
@@ -13,13 +13,13 @@
 #        DIRNAME/FILENAME. In other words, there will be a symlink with the
 #        same path as the image file, except for the EXTENSION.
 #
-#        umount-image undoes these actions, in the opposite sequence.
+#        umount-image.sh undoes these actions, in the opposite sequence.
 #
 #        If either script fails, it is likely that the image or mount point is
 #        still in use, or that the image file has no extension.
 #
 # COPYRIGHT AND LICENSE
-#        Copyright (C) 2008-2011 Victor Engmark
+#        Copyright (C) 2008-2012 Victor Engmark
 #
 #        This program is free software: you can redistribute it and/or modify
 #        it under the terms of the GNU General Public License as published by
