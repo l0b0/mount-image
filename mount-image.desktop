@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=mount-image
+GenericName=Mount Image
+Comment=Mount ISO, NRG, and other drive images
+Icon=mount-image
+Exec=mount-image
+Terminal=false
+Categories=Accessories;
